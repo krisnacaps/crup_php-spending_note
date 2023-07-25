@@ -1,6 +1,17 @@
 <?php
 
+session_start();
+
 include 'config/app.php';
+
+// limit access page before login
+if (!isset($_SESSION["login"])) {
+    echo "<script>
+            document.location.href = 'login.php?=anda belum login';
+        </script>";
+
+    exit;
+}
 
 if (isset($_GET['id'])) {
     // get item id from url

@@ -1,7 +1,7 @@
 <?php
 
 include 'Layout/header.php';
-// include 'config/app.php';
+
 
 // check if add button clicked
 if (isset($_POST['add'])) {
@@ -12,7 +12,7 @@ if (isset($_POST['add'])) {
             </script>";
     } else {
         echo "<script>
-                alert('Berhasil disimpan ke database');
+                alert('Gagal disimpan ke database');
                 document.location.href = 'index.php';
             </script>";
     }

@@ -1,6 +1,18 @@
 <?php
 
+
 include 'Layout/header.php';
+include 'Layout/footer.php';
+
+
+// limit access page before login
+if (!isset($_SESSION["login"])) {
+    echo "<script>
+            document.location.href = 'login.php?=anda belum login';
+        </script>";
+
+    exit;
+}
 
 // get item id form url
 $id_item = (int)$_GET['id'];
